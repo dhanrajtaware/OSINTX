@@ -2,9 +2,10 @@ import requests
 
 def username_recon(username):
     sites = {
-        "GitHub": f"https://github.com/{username}",
-        "Reddit": f"https://reddit.com/user/{username}",
-        "Instagram": f"https://instagram.com/{username}"
+    "GitHub": f"https://github.com/{username}",
+    "Reddit": f"https://reddit.com/user/{username}",
+    "Instagram": f"https://instagram.com/{username}",
+    "Twitter": f"https://x.com/{username}"
     }
 
     results = {}

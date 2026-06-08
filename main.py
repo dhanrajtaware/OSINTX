@@ -118,18 +118,16 @@ risk_result = calculate_risk(
 results["risk"] = risk_result
 
 if results:
+
     save_json(
         results,
         "reports/report.json"
     )
 
+    write_report(
+        results,
+        "reports/report.txt"
+    )
+
     print("\n[+] Report saved to reports/report.json")
-
-write_report(
-    results,
-    "reports/report.txt"
-)
-
-print(
-    "[+] Report saved to reports/report.txt"
-)
+    print("[+] Report saved to reports/report.txt")
