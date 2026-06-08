@@ -1,21 +1,45 @@
 {
-    "domain": {
-        "ip": "20.207.73.82",
-        "registrar": "MarkMonitor, Inc.",
-        "creation_date": "2007-10-09 18:20:50+00:00",
-        "server": "github.com",
-        "powered_by": "Not Exposed",
-        "security_headers": {
-            "HSTS": true,
-            "CSP": true,
-            "X-Frame-Options": true,
-            "X-Content-Type-Options": true
-        },
-        "subdomains": []
+    "account_discovery": {
+        "generated_usernames": [
+            "johnsmith",
+            "john_smith",
+            "smithjohn",
+            "john.smith",
+            "jsmith"
+        ],
+        "findings": {
+            "johnsmith": [
+                "GitHub",
+                "Instagram",
+                "Twitter"
+            ],
+            "john_smith": [
+                "Instagram",
+                "Twitter"
+            ],
+            "smithjohn": [
+                "GitHub",
+                "Instagram",
+                "Twitter"
+            ],
+            "john.smith": [
+                "Instagram",
+                "Twitter"
+            ],
+            "jsmith": [
+                "GitHub",
+                "Instagram",
+                "Twitter"
+            ]
+        }
     },
     "risk": {
-        "risk": "LOW",
-        "score": 0,
-        "reasons": []
+        "risk": "MEDIUM",
+        "score": 4,
+        "reasons": [
+            "SPF record missing",
+            "DMARC record missing",
+            "No MX records found"
+        ]
     }
 }

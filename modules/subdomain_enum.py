@@ -6,13 +6,14 @@ def get_subdomains(domain):
     subdomains = set()
 
     try:
+
         url = f"https://crt.sh/?q=%.{domain}&output=json"
 
         response = requests.get(
             url,
             timeout=15,
             headers={
-                "User-Agent": "OSINTX/1.0"
+                "User-Agent": "Mozilla/5.0"
             }
         )
 
@@ -23,11 +24,18 @@ def get_subdomains(domain):
 
         for entry in data:
 
-            name = entry.get("name_value", "")
+            names = entry.get(
+                "name_value",
+                ""
+            )
 
-            for subdomain in name.split("\n"):
+            for subdomain in names.split("\n"):
 
-                subdomain = subdomain.strip().lower()
+                subdomain = (
+                    subdomain
+                    .strip()
+                    .lower()
+                )
 
                 if "*" in subdomain:
                     continue
@@ -38,5 +46,9 @@ def get_subdomains(domain):
         return sorted(subdomains)
 
     except Exception as e:
-        print(f"SUBDOMAIN ERROR: {e}")
+
+        print(
+            f"SUBDOMAIN ERROR: {e}"
+        )
+
         return []
